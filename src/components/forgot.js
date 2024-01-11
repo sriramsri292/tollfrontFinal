@@ -33,7 +33,10 @@ export default function Forgot() {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    
+    if (!user.email || !user.password ) {
+      alert("Enter The Details ");
+       return;
+    }
     const data = {
       email: user.email,
       password: user.password,
